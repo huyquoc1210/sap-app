@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es2023",
+    "module": "es2022",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "allowJs": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": false,
+    "rootDir": "./src",
+    "outDir": "./webapp",
+    "baseUrl": "./",
+    "paths": {
+      "ui5/walkthrough/*": ["webapp/*"]
+    }
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["./test"]
+}

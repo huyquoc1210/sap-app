@@ -1,0 +1,8 @@
+{
+  "ignore": ["**/*.d.ts"],
+  "presets": [
+    ["@babel/preset-env", { "modules": false }],
+    "transform-ui5",
+    "@babel/preset-typescript"
+  ]
+}
