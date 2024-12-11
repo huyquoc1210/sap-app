@@ -28,7 +28,7 @@
     "chromedriver": "^120",
     "npm-run-all": "^4",
     "ts-node": "^10",
-    "typescript": "^5.7.2",
+    "typescript": "^5",
     "wdio-chromedriver-service": "^8",
     "wdio-ui5-service": "^2",
     "webdriverio": "^8"
