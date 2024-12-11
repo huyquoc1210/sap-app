@@ -1,4 +1,4 @@
-import browser from "sap/ui/Device";
+import Device from "sap/ui/Device";
 import Filter from "sap/ui/model/Filter";
 import FilterOperator from "sap/ui/model/FilterOperator";
 import JSONModel from "sap/ui/model/json/JSONModel";
@@ -10,11 +10,14 @@ import ListBinding from "sap/ui/model/ListBinding";
 import FilterType from "sap/ui/model/FilterType";
 import Input from "sap/m/Input";
 import List from "sap/m/List";
+import { SegmentedButton$SelectionChangeEvent } from "sap/m/SegmentedButton";
 
 type Todo = {
   title: string;
   completed: boolean;
 };
+
+type FilterKey = "all" | "active" | "completed";
 
 /**
  * @namespace sap.m.sample.TsTodos.webapp.controller
@@ -31,7 +34,7 @@ export default class App extends BaseController {
 
     this.setModel(
       new JSONModel({
-        isMobile: browser.mobile,
+        isMobile: Device.browser.mobile,
         filterText: undefined,
       }),
       "view"
@@ -116,12 +119,14 @@ export default class App extends BaseController {
     this._applyListFilters();
   }
 
-  public onFilter(event: UI5Event) {
+  public onFilter(event: SegmentedButton$SelectionChangeEvent) {
+    const selectItem = event.getParameter("item");
+    if (!selectItem) return;
     // First reset current filters
     this.tabFilters = [];
 
     // add filter for search
-    this.filterKey = event.getParameter("item").getKey();
+    this.filterKey = <FilterKey>selectItem.getKey();
 
     // eslint-disable-line default-case
     switch (this.filterKey) {
