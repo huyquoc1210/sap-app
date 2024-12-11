@@ -121,7 +121,7 @@ export default class App extends BaseController {
     this.tabFilters = [];
 
     // add filter for search
-    this.filterKey = event.getParameter("item")?.getKey();
+    this.filterKey = event.getParameter("item").getKey();
 
     // eslint-disable-line default-case
     switch (this.filterKey) {

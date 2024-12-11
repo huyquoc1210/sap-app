@@ -83,12 +83,11 @@ sap.ui.define(["sap/ui/Device", "sap/ui/model/Filter", "sap/ui/model/FilterOpera
       this._applyListFilters();
     },
     onFilter: function _onFilter(event) {
-      var _event$getParameter;
       // First reset current filters
       this.tabFilters = [];
 
       // add filter for search
-      this.filterKey = (_event$getParameter = event.getParameter("item")) === null || _event$getParameter === void 0 ? void 0 : _event$getParameter.getKey();
+      this.filterKey = event.getParameter("item").getKey();
 
       // eslint-disable-line default-case
       switch (this.filterKey) {
