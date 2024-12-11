@@ -5,8 +5,8 @@
   "author": "SAP SE",
   "description": "Showcase of a TypeScript setup for developing UI5 applications",
   "scripts": {
-    "start": "npm-run-all --parallel watch start:ui5",
-    "start:ui5": "ui5 serve",
+    "start": "npm-run-all --parallel watch start:ui5 ",
+    "start:ui5": "ui5 serve -o index.html",
     "build": "babel src --out-dir webapp --extensions \".ts,.js\" --copy-files",
     "watch": "babel src --out-dir webapp --source-maps true --extensions \".ts,.js\" --copy-files --watch",
     "ts-typecheck": "tsc --noEmit",
