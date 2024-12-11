@@ -1,4 +1,4 @@
-import { browser } from "sap/ui/Device";
+import browser from "sap/ui/Device";
 import Filter from "sap/ui/model/Filter";
 import FilterOperator from "sap/ui/model/FilterOperator";
 import JSONModel from "sap/ui/model/json/JSONModel";
@@ -121,7 +121,7 @@ export default class App extends BaseController {
     this.tabFilters = [];
 
     // add filter for search
-    this.filterKey = event.getParameter("item").getKey();
+    this.filterKey = event.getParameter("item")?.getKey();
 
     // eslint-disable-line default-case
     switch (this.filterKey) {

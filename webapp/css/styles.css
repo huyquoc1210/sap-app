@@ -1,0 +1,3 @@
+li[data-todo-item-completed="true"] span {
+  text-decoration: line-through;
+}
