@@ -46,6 +46,7 @@ export default class App extends BaseController {
    */
   public addTodo(): void {
     const model = this.getModel();
+
     const todos: Todo[] = model
       .getProperty("/todos")
       .map((todo: Todo) => Object.assign({}, todo));
@@ -98,6 +99,7 @@ export default class App extends BaseController {
   public onSearch(event: UI5Event) {
     const model = this.getModel();
     const input = event.getSource() as Input;
+    // console.log(input.getValue());
 
     // First reset current filters
     this.searchFilters = [];
@@ -147,6 +149,7 @@ export default class App extends BaseController {
   public _applyListFilters(): void {
     const list = this.byId("todoList") as List;
     const binding = list.getBinding("items") as ListBinding;
+    console.log(binding);
 
     binding.filter(
       this.searchFilters.concat(this.tabFilters),
